@@ -123,3 +123,41 @@ strong {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* --- NEW ADDITION: NAVIGATION BAR --- */
+.nav-container {
+    display: flex;
+    gap: 30px; /* Modern way to space elements */
+    margin-bottom: 60px; /* Breathing room before the Hero section */
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.nav-link {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #fff;
+}
+
+/* Optional: A subtle indicator dot for the active page */
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-link.disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+}
