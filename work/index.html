@@ -13,7 +13,13 @@ title: Work | Anush Oswal
     <div class="card">
         <h3>{{ item.name }}</h3>
         <p>{{ item.description }}</p>
+        <br>
         <strong class="card-tag">{{ item.tag }}</strong>
     </div>
     {% endfor %}
 </section>
+
+<footer class="fade-in delay-3" style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+    <a href="mailto:anush.oswal@gmail.com" class="button">Get in Touch</a>
+    {% include social-links.html %}
+</footer>
