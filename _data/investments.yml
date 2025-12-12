@@ -1,6 +1,6 @@
 - name: SpaceX
-   description: Reusable rockets revolutionizing space exploration.
-   tag: DEEP TECH
+  description: Reusable rockets revolutionizing space exploration.
+  tag: DEEP TECH
 
 - name: Neuralink
   description: High-bandwidth brain-machine interfaces.
