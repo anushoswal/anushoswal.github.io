@@ -169,3 +169,21 @@ strong {
     display: block;
     margin-bottom: 25px;
 }
+
+/* --- BRAND CREST STYLING --- */
+.logo-container {
+    display: flex;
+    justify-content: center; /* Center aligns the logo */
+    margin-bottom: 25px;     /* Breathing room between logo and name */
+}
+
+.brand-crest {
+    width: 48px;       /* Keep it subtle and minimalist */
+    height: 48px;
+    opacity: 0.95;     /* Almost solid white */
+    transition: transform 0.4s ease;
+}
+
+.brand-crest:hover {
+    transform: translateY(-2px); /* Subtle float effect on hover */
+}
