@@ -1,13 +1,38 @@
 /* RESET & BASE STYLES */
+:root {
+    /* DEFAULT DARK MODE (Your current look) */
+    --bg-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --text-sub: #888;
+    --accent: #fff;
+    --border: #222;
+    --card-hover: rgba(255, 255, 255, 0.05);
+    --nav-text: #666;
+    --nav-active: #fff;
+}
+
+body.light-mode {
+    /* WABI.AI STYLE LIGHT MODE */
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --text-sub: #555;
+    --accent: #000;
+    --border: #e5e5e5;
+    --card-hover: rgba(0, 0, 0, 0.03);
+    --nav-text: #888;
+    --nav-active: #000;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
 }
 
 body {
-    background-color: #0a0a0a; /* The "Wabi" Deep Black */
-    color: #e0e0e0; /* Soft White */
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     display: flex;
@@ -24,25 +49,48 @@ body {
 /* --- NAVIGATION BAR --- */
 .nav-container {
     display: flex;
-    align-items: center; /* Vertically aligns logo with text */
-    gap: 25px;           /* Spacing between items */
-    margin-bottom: 60px; /* Breathing room before the Hero section */
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 60px;
     font-size: 0.95rem;
     font-weight: 400;
 }
 
-/* New Logo Styling inside Nav */
+/* Push the toggle button to the far right */
+.theme-toggle-btn {
+    margin-left: auto; /* This magic line pushes it to the corner */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--nav-text);
+    font-size: 1.1rem;
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--accent);
+}
+
 .nav-logo-link {
-    display: flex;       /* Ensures no extra link height */
-    margin-right: 10px;  /* Extra space between logo and "Home" */
+    display: flex;
+    margin-right: 10px;
     text-decoration: none;
 }
 
 .nav-logo-img {
-    width: 36px;         /* Elegant, small size */
+    width: 36px;
     height: 36px;
     opacity: 0.9;
     transition: opacity 0.2s;
+}
+
+/* SMART LOGO INVERSION: 
+   If light mode is on, we invert the colors of the logo image.
+   White lines -> Black lines. Black bg -> White bg.
+   This makes it blend perfectly into the white page. */
+body.light-mode .nav-logo-img {
+    filter: invert(1); 
 }
 
 .nav-logo-img:hover {
@@ -51,23 +99,22 @@ body {
 
 /* Nav Links */
 .nav-link {
-    color: #666;
+    color: var(--nav-text);
     text-decoration: none;
     transition: color 0.2s ease;
     position: relative;
 }
 
 .nav-link:hover, .nav-link.active {
-    color: #fff;
+    color: var(--nav-active);
 }
 
-/* Active Page Dot Indicator */
 .nav-link.active::after {
     content: '';
     position: absolute;
     width: 4px;
     height: 4px;
-    background: #fff;
+    background: var(--accent);
     border-radius: 50%;
     bottom: -8px;
     left: 50%;
@@ -89,12 +136,12 @@ h1 {
     font-weight: 600;
     letter-spacing: -1px;
     margin-bottom: 10px;
-    color: #ffffff;
+    color: var(--accent); /* Uses variable now */
 }
 
 .subtitle {
     font-size: 1.2rem;
-    color: #888;
+    color: var(--text-sub);
     margin-bottom: 0;
     font-weight: 300;
 }
@@ -103,12 +150,12 @@ h1 {
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 80px;
-    color: #ccc;
+    color: var(--text-color);
     line-height: 1.5;
 }
 
 strong {
-    color: #fff;
+    color: var(--accent);
     font-weight: 500;
 }
 
@@ -118,19 +165,29 @@ strong {
     grid-template-columns: 1fr;
     gap: 40px;
     margin-bottom: 80px;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--border);
     padding-top: 40px;
+}
+
+.card {
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.card:hover {
+    background-color: var(--card-hover);
 }
 
 .card h3 {
     font-size: 1.1rem;
     margin-bottom: 10px;
-    color: #fff;
+    color: var(--accent);
 }
 
 .card p {
     font-size: 1rem;
-    color: #666;
+    color: var(--text-sub);
 }
 
 /* --- BUTTONS & LINKS --- */
@@ -138,32 +195,36 @@ strong {
     display: inline-block;
     padding: 12px 24px;
     border: 1px solid #333;
-    color: #fff;
+    color: var(--accent);
+    background: transparent;
     text-decoration: none;
     border-radius: 4px;
     transition: all 0.3s ease;
     margin-bottom: 40px;
 }
 
-.button:hover {
-    background-color: #fff;
-    color: #000;
+/* Button needs specific handling for light mode borders */
+body.light-mode .button {
+    border-color: #ddd;
 }
 
-/* Update this section in your style.css */
+.button:hover {
+    background-color: var(--accent);
+    color: var(--bg-color); /* Inverts text on hover */
+}
 
 .links a {
-    color: #666;
+    color: var(--nav-text);
     margin: 0 15px;
     font-size: 1.5rem;
     transition: color 0.2s;
-    text-decoration: none; /* <--- THIS IS THE FIX */
-    display: inline-block; /* Helps clean up rendering */
+    text-decoration: none;
+    display: inline-block;
 }
 
 .links a:hover {
-    color: #fff;
-    transform: translateY(-2px); /* Optional: Adds a tiny float effect */
+    color: var(--accent);
+    transform: translateY(-2px);
 }
 
 /* --- ANIMATIONS --- */
