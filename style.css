@@ -90,9 +90,8 @@ strong {
 
 .links a {
     color: #666;
-    text-decoration: none;
-    margin-right: 20px;
-    font-size: 0.9rem;
+    margin: 0 15px; /* Adds space between icons */
+    font-size: 1.5rem; /* Makes icons larger */
     transition: color 0.2s;
 }
 
