@@ -1,11 +1,2 @@
-- name: SpaceX
-  description: Reusable rockets revolutionizing space exploration.
-  tag: DEEP TECH
-
-- name: Neuralink
-  description: High-bandwidth brain-machine interfaces.
-  tag: BIO TECH
-
-- name: Stripe
-  description: Financial infrastructure platform for the internet.
-  tag: FINTECH
+# moved to _data/investments.yml
+# original content removed to avoid duplication
