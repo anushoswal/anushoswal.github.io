@@ -161,3 +161,11 @@ strong {
     cursor: not-allowed;
     opacity: 0.3;
 }
+
+/* Add this to style.css */
+.site-logo {
+    width: 50px; /* Adjust this number to make it bigger/smaller */
+    height: auto;
+    display: block;
+    margin-bottom: 25px;
+}
