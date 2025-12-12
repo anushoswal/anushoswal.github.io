@@ -1,87 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anush Oswal | Technologist & Investor</title>
-    
-    <link rel="stylesheet" href="/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" sizes="any">
-    <link rel="apple-touch-icon" href="/logo.svg">
-</head>
-<body>
+---
+layout: default
+title: Anush Oswal | Technologist & Investor
+show_instagram: true
+---
+<header class="fade-in">
+    <h1>Anush Oswal</h1>
+    <p class="subtitle">Technology Evangelist. Aspiring VC. Builder.</p>
+</header>
 
-    <div class="container">
-        <nav class="nav-container fade-in">
-            <a href="/" class="nav-logo-link">
-                <img src="/logo.svg" alt="AO Logo" class="nav-logo-img">
-            </a>
+<section class="fade-in delay-1">
+    <p class="bio">
+        Currently scaling systems at <strong>Tesla</strong>. 
+        Obsessed with high-growth technology and operational leverage.
+    </p>
+</section>
 
-            <a href="/" class="nav-link active">Home</a>
-            <a href="/work/" class="nav-link">Work</a>
-            <a href="#" class="nav-link disabled">Investing (Coming Soon)</a>
-            
-            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
-                <i class="fas fa-sun"></i>
-            </button>
-        </nav>
-
-        <header class="fade-in">
-            <h1>Anush Oswal</h1>
-            <p class="subtitle">Technology Evangelist. Aspiring VC. Builder.</p>
-        </header>
-
-        <section class="fade-in delay-1">
-            <p class="bio">
-                Currently scaling systems at <strong>Tesla</strong>. 
-                Obsessed with high-growth technology and operational leverage.
-            </p>
-        </section>
-
-        <section class="grid-section fade-in delay-2">
-            <div class="card">
-                <h3>Engineering</h3>
-                <p>Building resilient, scalable infrastructure for the next generation of autonomy.</p>
-            </div>
-            <div class="card">
-                <h3>Work</h3>
-                <p>Investing in founders who solve hard problems. Focused on Deep Tech & AI.</p>
-            </div>
-            <div class="card">
-                <h3>Entrepreneurship</h3>
-                <p>0 to 1 mindset. Turning abstract concepts into tangible products.</p>
-            </div>
-        </section>
-
-        <footer class="fade-in delay-3">
-            <a href="mailto:anush.oswal@gmail.com" class="button">Get in Touch</a>
-            
-            <div class="links">
-                <a href="https://www.linkedin.com/in/anushoswal/" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin fa-lg"></i>
-                </a>
-                
-                <a href="https://x.com/AnushOswal" target="_blank" aria-label="X">
-                    <i class="fa-brands fa-x-twitter fa-lg"></i>
-                </a>
-                
-                
-                <a href="https://github.com/anushoswal" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github fa-lg"></i>
-                </a>
-                
-                <a href="#" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram fa-lg"></i>
-                </a>
-            </div>
-        </footer>
-
+<section class="grid-section fade-in delay-2">
+    <div class="card">
+        <h3>Engineering</h3>
+        <p>Building resilient, scalable infrastructure for the next generation of autonomy.</p>
     </div>
+    <div class="card">
+        <h3>Work</h3>
+        <p>Investing in founders who solve hard problems. Focused on Deep Tech & AI.</p>
+    </div>
+    <div class="card">
+        <h3>Entrepreneurship</h3>
+        <p>0 to 1 mindset. Turning abstract concepts into tangible products.</p>
+    </div>
+</section>
 
-    <script src="/script.js"></script>
-
-</body>
-</html>
+<footer class="fade-in delay-3">
+    <a href="mailto:anush.oswal@gmail.com" class="button">Get in Touch</a>
+    
+    {% include social-links.html %}
+</footer>

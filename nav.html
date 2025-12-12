@@ -1,0 +1,13 @@
+<nav class="nav-container fade-in">
+    <a href="/" class="nav-logo-link">
+        <img src="/logo.svg" alt="AO Logo" class="nav-logo-img">
+    </a>
+
+    <a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a>
+    <a href="/work/" class="nav-link {% if page.url == '/work/' %}active{% endif %}">Work</a>
+    <a href="#" class="nav-link disabled">Investing (Coming Soon)</a>
+    
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
+        <i class="fas fa-sun"></i>
+    </button>
+</nav>

@@ -1,73 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work | Anush Oswal</title>
-    
-    <link rel="stylesheet" href="/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" sizes="any">
-    <link rel="apple-touch-icon" href="/logo.svg">
-</head>
-<body>
+---
+layout: default
+title: Work | Anush Oswal
+---
+<header class="fade-in delay-1">
+    <h1>Work</h1>
+    <p class="subtitle">Investment Thesis & Portfolio.</p>
+</header>
 
-    <div class="container">
-        <nav class="nav-container fade-in">
-            <a href="/" class="nav-logo-link">
-                <img src="/logo.svg" alt="AO Logo" class="nav-logo-img">
-            </a>
-
-            <a href="/" class="nav-link">Home</a>
-            <a href="/work/" class="nav-link active">Work</a>
-            <a href="#" class="nav-link disabled">Investing (Coming Soon)</a>
-
-            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
-                <i class="fas fa-sun"></i>
-            </button>
-        </nav>
-
-        <header class="fade-in delay-1">
-            <h1>Work</h1>
-            <p class="subtitle">Investment Thesis & Portfolio.</p>
-        </header>
-
-        <section class="grid-section fade-in delay-2">
-            <div class="card">
-                <h3>SpaceX</h3>
-                <p>Reusable rockets revolutionizing orbital access costs.</p>
-                <br>
-                <strong style="font-size: 0.8rem; color: #444;">DEEP TECH</strong>
-            </div>
-
-            <div class="card">
-                <h3>Neuralink</h3>
-                <p>High-bandwidth brain-machine interfaces.</p>
-                <br>
-                <strong style="font-size: 0.8rem; color: #444;">BIO TECH</strong>
-            </div>
-
-            <div class="card">
-                <h3>Stripe</h3>
-                <p>Financial infrastructure platform for the internet.</p>
-                <br>
-                <strong style="font-size: 0.8rem; color: #444;">FINTECH</strong>
-            </div>
-        </section>
-        
-        <footer class="fade-in delay-3">
-             <div class="links">
-                <a href="https://www.linkedin.com/in/anushoswal/" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-                <a href="https://x.com/AnushOswal" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
-                <a href="https://github.com/anushoswal" target="_blank"><i class="fab fa-github fa-lg"></i></a>
-            </div>
-        </footer>
-
+<section class="grid-section fade-in delay-2">
+    {% for item in site.data.investments %}
+    <div class="card">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <br>
+        <strong class="card-tag">{{ item.tag }}</strong>
     </div>
+    {% endfor %}
+</section>
 
-    <script src="/script.js"></script>
-
-</body>
-</html>
+<footer class="fade-in delay-3">
+     {% include social-links.html %}
+</footer>
