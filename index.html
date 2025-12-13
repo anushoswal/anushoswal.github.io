@@ -15,7 +15,34 @@ title: Anush Oswal | Technologist & Investor
     </p>
 </section>
 
-<section class="grid-section fade-in delay-2">
+<section class="fade-in delay-2" style="margin-bottom: 60px;">
+    <div style="border-left: 2px solid var(--accent); padding-left: 20px; margin: 40px 0;">
+        <span style="font-size: 0.8rem; color: var(--text-sub); letter-spacing: 1px; text-transform: uppercase;">
+            Latest Signal
+        </span>
+        
+        {% if site.posts.size > 0 %}
+            {% assign latest = site.posts.first %}
+            <h3 style="margin: 10px 0;">
+                <a href="{{ latest.url }}" style="text-decoration: none; color: var(--accent); font-size: 1.4rem;">
+                    {{ latest.title }} <i class="fas fa-arrow-right" style="font-size: 0.9rem; margin-left: 5px;"></i>
+                </a>
+            </h3>
+            <p style="color: var(--nav-text); font-size: 1rem; margin-bottom: 5px;">
+                {{ latest.summary }}
+            </p>
+            <span style="font-size: 0.8rem; color: var(--text-sub); font-family: monospace;">
+                {{ latest.date | date: "%B %d, %Y" }} • {{ latest.tag }}
+            </span>
+        {% else %}
+            <p style="color: var(--text-sub); font-style: italic;">
+                Signal feed initializing...
+            </p>
+        {% endif %}
+    </div>
+</section>
+
+<section class="grid-section fade-in delay-3">
     <div class="card">
         <h3>Engineering</h3>
         <p>Building resilient, scalable infrastructure for the next generation of autonomy.</p>
@@ -29,8 +56,3 @@ title: Anush Oswal | Technologist & Investor
         <p>0 to 1 mindset. Turning abstract concepts into tangible products.</p>
     </div>
 </section>
-
-<footer class="fade-in delay-3" style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
-    <a href="mailto:anush.oswal@gmail.com" class="button">Get in Touch</a>
-    {% include social-links.html %}
-</footer>

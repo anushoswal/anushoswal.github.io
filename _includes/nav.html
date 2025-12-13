@@ -4,8 +4,11 @@
     </a>
 
     <a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a>
-    <a href="/work/" class="nav-link {% if page.url == '/work/' %}active{% endif %}">Work</a>
-    <a href="/investing/" class="nav-link {% if page.url == '/investing/' %}active{% endif %}">Investing</a>
+    <a href="/work/" class="nav-link {% if page.url contains '/work/' %}active{% endif %}">Work</a>
+    
+    <a href="/signals/" class="nav-link {% if page.url contains '/signals/' %}active{% endif %}">Signals</a>
+    
+    <a href="/investing/" class="nav-link {% if page.url contains '/investing/' %}active{% endif %}">Investing</a>
     
     <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
         <i class="fas fa-sun"></i>
