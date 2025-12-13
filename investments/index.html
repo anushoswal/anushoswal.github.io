@@ -1,0 +1,32 @@
+---
+layout: default
+title: Investing | Anush Oswal
+---
+
+<header class="fade-in delay-1">
+    <h1>Investing</h1>
+    <p class="subtitle">Backing founders building the impossible.</p>
+</header>
+
+<section class="grid-section fade-in delay-2">
+    
+    {% for bet in site.data.portfolio %}
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <h3>{{ bet.company }}</h3>
+            <span style="font-size: 0.8rem; color: var(--accent); opacity: 0.6;">{{ bet.status }}</span>
+        </div>
+        
+        <p>{{ bet.thesis }}</p>
+        
+        <strong class="card-tag" style="margin-top: 15px; display: block;">{{ bet.stage }}</strong>
+    </div>
+    {% endfor %}
+
+</section>
+
+<section class="fade-in delay-3" style="margin-top: 60px; text-align: center;">
+    <p style="color: var(--text-sub); font-size: 0.9rem;">
+        <em>Disclaimer: Not financial advice. Opinions are my own.</em>
+    </p>
+</section>
