@@ -1,14 +1,17 @@
 - company: "OpenAI"
+  url: "https://openai.com"
   stage: "Series A"
   thesis: "Generative models will commoditize intelligence."
   status: "Active"
 
 - company: "Anduril"
+  url: "https://anduril.com"
   stage: "Seed"
   thesis: "Modernizing defense through autonomous systems."
   status: "Active"
 
 - company: "Varda"
+  url: "https://varda.com"
   stage: "Series B"
   thesis: "Microgravity manufacturing is the next industrial revolution."
   status: "Watchlist"

@@ -11,7 +11,11 @@ title: Work | Anush Oswal
 <section class="grid-section fade-in delay-2">
     {% for item in site.data.investments %}
     <div class="card">
-        <h3>{{ item.name }}</h3>
+        <h3>
+            <a href="{{ item.url }}" target="_blank" class="card-title-link">
+                {{ item.name }} <i class="fas fa-external-link-alt" style="font-size: 0.7rem; opacity: 0.5; vertical-align: middle;"></i>
+            </a>
+        </h3>
         <p>{{ item.description }}</p>
         <br>
         <strong class="card-tag">{{ item.tag }}</strong>

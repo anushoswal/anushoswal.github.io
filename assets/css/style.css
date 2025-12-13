@@ -336,3 +336,26 @@ body.light-mode .button { border-color: #ddd; }
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+
+/* --- CARD TITLE LINKS --- */
+.card-title-link {
+    text-decoration: none;
+    color: var(--accent); /* Inherits the header white/black */
+    transition: opacity 0.2s;
+    border-bottom: 1px solid transparent; /* invisible border for hover effect */
+}
+
+.card-title-link:hover {
+    opacity: 0.8;
+    border-bottom: 1px solid var(--accent); /* Minimal underline on hover */
+}
+
+/* Fix icon alignment */
+.card-title-link i {
+    transition: transform 0.2s;
+}
+
+.card-title-link:hover i {
+    transform: translate(2px, -2px); /* Tiny move animation */
+}

@@ -1,11 +1,14 @@
 - name: SpaceX
+  url: "https://www.spacex.com"
   description: Reusable rockets revolutionizing space exploration.
   tag: DEEP TECH
 
 - name: Neuralink
+  url: "https://neuralink.com"
   description: High-bandwidth brain-machine interfaces.
   tag: BIO TECH
 
 - name: Stripe
+  url: "https://stripe.com"
   description: Financial infrastructure platform for the internet.
   tag: FINTECH

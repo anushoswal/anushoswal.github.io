@@ -13,7 +13,11 @@ title: Investing | Anush Oswal
     {% for bet in site.data.portfolio %}
     <div class="card">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
-            <h3>{{ bet.company }}</h3>
+            <h3>
+                <a href="{{ bet.url }}" target="_blank" class="card-title-link">
+                    {{ bet.company }}
+                </a>
+            </h3>
             <span style="font-size: 0.8rem; color: var(--accent); opacity: 0.6;">{{ bet.status }}</span>
         </div>
         
