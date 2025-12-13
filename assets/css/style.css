@@ -267,9 +267,8 @@ body.light-mode .button { border-color: #ddd; }
 }
 
 
-/* --- SIGNALS FEED STYLES --- */
+/* --- THOUGHTS FEED STYLES --- */
 
-/* Minimal Dropdowns */
 .minimal-select {
     background: transparent;
     color: var(--accent);
@@ -283,36 +282,35 @@ body.light-mode .button { border-color: #ddd; }
 }
 
 .minimal-select option {
-    background-color: var(--bg-color); /* Ensures dropdown isn't white in dark mode */
+    background-color: var(--bg-color);
     color: var(--text-color);
 }
 
-/* The Signal Card (Clickable Row) */
-.signal-card {
-    display: block; /* It's an <a> tag behaving like a block */
+/* The Thought Card */
+.thought-card {
+    display: block;
     text-decoration: none;
     padding: 25px 0;
     border-bottom: 1px solid var(--border);
     transition: transform 0.2s ease, opacity 0.2s;
 }
 
-.signal-card:hover {
+.thought-card:hover {
     opacity: 0.8;
 }
 
-.signal-card:hover .signal-title i {
+.thought-card:hover .thought-title i {
     opacity: 1 !important;
-    transform: translateX(5px) !important; /* Arrow moves right on hover */
+    transform: translateX(5px) !important;
 }
 
-/* Typography inside card */
-.signal-date {
+.thought-date {
     font-size: 0.85rem;
     color: var(--text-sub);
-    font-family: monospace; /* Gives it that "Terminal/Data" feel */
+    font-family: monospace;
 }
 
-.signal-tag {
+.thought-tag {
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -322,18 +320,17 @@ body.light-mode .button { border-color: #ddd; }
     border-radius: 3px;
 }
 
-.signal-title {
+.thought-title {
     font-size: 1.4rem;
     color: var(--accent);
     margin: 5px 0 10px 0;
     font-weight: 500;
 }
 
-.signal-summary {
+.thought-summary {
     font-size: 1rem;
     color: var(--text-sub);
     line-height: 1.5;
-    /* Limit to 3 lines with ellipsis ... */
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
