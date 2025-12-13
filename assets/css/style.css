@@ -265,3 +265,77 @@ body.light-mode .button { border-color: #ddd; }
     color: var(--accent);
     transform: translateY(-3px);
 }
+
+
+/* --- SIGNALS FEED STYLES --- */
+
+/* Minimal Dropdowns */
+.minimal-select {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+}
+
+.minimal-select option {
+    background-color: var(--bg-color); /* Ensures dropdown isn't white in dark mode */
+    color: var(--text-color);
+}
+
+/* The Signal Card (Clickable Row) */
+.signal-card {
+    display: block; /* It's an <a> tag behaving like a block */
+    text-decoration: none;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--border);
+    transition: transform 0.2s ease, opacity 0.2s;
+}
+
+.signal-card:hover {
+    opacity: 0.8;
+}
+
+.signal-card:hover .signal-title i {
+    opacity: 1 !important;
+    transform: translateX(5px) !important; /* Arrow moves right on hover */
+}
+
+/* Typography inside card */
+.signal-date {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    font-family: monospace; /* Gives it that "Terminal/Data" feel */
+}
+
+.signal-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--nav-text);
+    border: 1px solid var(--border);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.signal-title {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin: 5px 0 10px 0;
+    font-weight: 500;
+}
+
+.signal-summary {
+    font-size: 1rem;
+    color: var(--text-sub);
+    line-height: 1.5;
+    /* Limit to 3 lines with ellipsis ... */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

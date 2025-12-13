@@ -1,0 +1,100 @@
+---
+layout: default
+title: Signals | Anush Oswal
+---
+
+<header class="fade-in">
+    <h1>Signals</h1>
+    <p class="subtitle">Market Thesis & Operational Observations.</p>
+</header>
+
+<div class="fade-in delay-1" style="margin-bottom: 40px; display: flex; gap: 15px; align-items: center;">
+    <select id="yearFilter" class="minimal-select">
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+    </select>
+
+    <select id="monthFilter" class="minimal-select">
+        <option value="01">January</option>
+        <option value="02">February</option>
+        <option value="03">March</option>
+        <option value="04">April</option>
+        <option value="05">May</option>
+        <option value="06">June</option>
+        <option value="07">July</option>
+        <option value="08">August</option>
+        <option value="09">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+    </select>
+</div>
+
+<section class="grid-section fade-in delay-2" style="grid-template-columns: 1fr; border-top: none;">
+    
+    {% for post in site.posts %}
+    <a href="{{ post.url }}" class="signal-card" 
+       data-year="{{ post.date | date: '%Y' }}" 
+       data-month="{{ post.date | date: '%m' }}">
+        
+        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span class="signal-date">{{ post.date | date: "%b %d" }}</span>
+            <span class="signal-tag">{{ post.tag }}</span>
+        </div>
+        
+        <h3 class="signal-title">{{ post.title }} <i class="fas fa-arrow-right" style="font-size: 0.8rem; opacity: 0; transform: translateX(-5px); transition: all 0.3s;"></i></h3>
+        
+        <p class="signal-summary">{{ post.summary }}</p>
+    </a>
+    {% endfor %}
+
+    <div id="no-signals" style="display: none; color: var(--text-sub); font-style: italic;">
+        No signals detected for this time period.
+    </div>
+
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const yearSelect = document.getElementById('yearFilter');
+        const monthSelect = document.getElementById('monthFilter');
+        const cards = document.querySelectorAll('.signal-card');
+        const noSignalsMsg = document.getElementById('no-signals');
+
+        // 1. Set Default to Current Date
+        const today = new Date();
+        yearSelect.value = today.getFullYear(); 
+        // Pad month with 0 if needed (e.g., "9" -> "09")
+        const currentMonth = String(today.getMonth() + 1).padStart(2, '0'); 
+        monthSelect.value = currentMonth;
+
+        // 2. The Filter Function
+        function filterSignals() {
+            const selectedYear = yearSelect.value;
+            const selectedMonth = monthSelect.value;
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cardYear = card.getAttribute('data-year');
+                const cardMonth = card.getAttribute('data-month');
+
+                if (cardYear === selectedYear && cardMonth === selectedMonth) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Show "No signals" message if empty
+            noSignalsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        // 3. Listen for changes
+        yearSelect.addEventListener('change', filterSignals);
+        monthSelect.addEventListener('change', filterSignals);
+
+        // 4. Run initially
+        filterSignals();
+    });
+</script>

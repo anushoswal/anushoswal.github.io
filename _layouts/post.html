@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Signals</title>
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg" sizes="any">
+</head>
+<body>
+
+    <div class="container">
+        {% include nav.html %}
+
+        <article class="fade-in">
+            <header style="margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                    <span style="color: var(--text-sub); font-size: 0.9rem;">{{ page.date | date: "%B %d, %Y" }}</span>
+                    <span style="color: var(--accent); font-size: 0.8rem; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px;">{{ page.tag }}</span>
+                </div>
+                <h1 style="margin-top: 15px; font-size: 2.2rem;">{{ page.title }}</h1>
+                <p class="subtitle" style="margin-bottom: 0;">{{ page.summary }}</p>
+            </header>
+
+            <div class="bio" style="font-size: 1.1rem; line-height: 1.8;">
+                {{ content }}
+            </div>
+
+            <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border);">
+                <a href="/signals/" class="nav-link" style="font-size: 0.9rem;">&larr; Back to Signals</a>
+            </div>
+        </article>
+    </div>
+
+    <script src="/assets/js/script.js"></script>
+
+</body>
+</html>
