@@ -333,6 +333,7 @@ body.light-mode .button { border-color: #ddd; }
     line-height: 1.5;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -358,4 +359,117 @@ body.light-mode .button { border-color: #ddd; }
 
 .card-title-link:hover i {
     transform: translate(2px, -2px); /* Tiny move animation */
+}
+
+
+/* --- RESUME STYLES --- */
+
+.resume-container {
+    max-width: 100%;
+}
+
+.resume-section {
+    margin-bottom: 40px;
+}
+
+.resume-category {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-sub);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.resume-item {
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid var(--border); /* The Timeline Line */
+    transition: border-color 0.3s;
+}
+
+.resume-item:hover {
+    border-left-color: var(--accent); /* Light up on hover */
+}
+
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.resume-role {
+    font-size: 1.2rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.resume-dates {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    font-family: monospace;
+}
+
+.resume-sub-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: var(--nav-text);
+}
+
+.resume-summary {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.resume-highlights {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.resume-highlights li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 5px;
+    color: var(--text-sub);
+    font-size: 0.95rem;
+}
+
+.resume-highlights li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* Skills Tags */
+.skill-group {
+    margin-bottom: 20px;
+}
+
+.skill-category {
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.skill-tag {
+    display: inline-block;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    color: var(--text-sub);
+    transition: all 0.2s;
+}
+
+.skill-tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
 }

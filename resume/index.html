@@ -1,0 +1,74 @@
+---
+layout: default
+title: Resume | Anush Oswal
+---
+
+<header class="fade-in delay-1">
+    <h1>Resume</h1>
+    <p class="subtitle">Operational History & Technical Competencies.</p>
+</header>
+
+<div class="resume-container fade-in delay-2">
+
+    <section class="resume-section">
+        <h2 class="resume-category">Experience</h2>
+        
+        {% for role in site.data.resume.experience %}
+        <div class="resume-item">
+            <div class="resume-header">
+                <h3 class="resume-role">{{ role.role }}</h3>
+                <span class="resume-dates">{{ role.dates }}</span>
+            </div>
+            <div class="resume-sub-header">
+                <span class="resume-company">{{ role.company }}</span>
+                <span class="resume-location">{{ role.location }}</span>
+            </div>
+            <p class="resume-summary">{{ role.summary }}</p>
+            
+            {% if role.highlights %}
+            <ul class="resume-highlights">
+                {% for point in role.highlights %}
+                <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="resume-section" style="margin-top: 60px;">
+        <h2 class="resume-category">Education</h2>
+        
+        {% for edu in site.data.resume.education %}
+        <div class="resume-item">
+            <div class="resume-header">
+                <h3 class="resume-role">{{ edu.school }}</h3>
+                <span class="resume-dates">{{ edu.dates }}</span>
+            </div>
+            <p class="resume-company">{{ edu.degree }}</p>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="resume-section" style="margin-top: 60px;">
+        <h2 class="resume-category">Skills</h2>
+        
+        <div class="skills-grid">
+            {% for group in site.data.resume.skills %}
+            <div class="skill-group">
+                <h4 class="skill-category">{{ group.category }}</h4>
+                <p class="skill-list">
+                    {% for skill in group.items %}
+                    <span class="skill-tag">{{ skill }}</span>
+                    {% endfor %}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div style="margin-top: 80px; text-align: center;">
+        <a href="#" class="button">Download PDF Version</a>
+    </div>
+
+</div>

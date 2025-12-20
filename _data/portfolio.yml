@@ -15,3 +15,24 @@
   stage: "Series B"
   thesis: "Microgravity manufacturing is the next industrial revolution."
   status: "Watchlist"
+
+# PUBLIC / DEEP TECH
+- company: "SpaceX"
+  url: "https://www.spacex.com"
+  stage: "Pre-IPO"
+  thesis: "Reusable rockets revolutionizing orbital access costs."
+  status: "Held"
+
+# PRIVATE / AI
+- company: "OpenAI"
+  url: "https://openai.com"
+  stage: "Series A"
+  thesis: "Generative models will commoditize intelligence."
+  status: "Active"
+
+# FINTECH
+- company: "Stripe"
+  url: "https://stripe.com"
+  stage: "Pre-IPO"
+  thesis: "Financial infrastructure platform for the internet."
+  status: "Held"

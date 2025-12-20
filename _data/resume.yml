@@ -1,0 +1,28 @@
+experience:
+  - role: "Global S&OP"
+    company: "Tesla"
+    dates: "Present"
+    location: "Fremont, CA"
+    summary: "Global Vehicle S&OP"
+    highlights:
+      - "Strategy"
+      - "Ops"
+
+  - role: "Senior Software Engineer"
+    company: "Hewlett Packard Enterprise"
+    dates: "Previous"
+    location: "Santa Clara, CA"
+    summary: "Developed & maintained real-time data analysis pipelines for Exec leadership"
+
+education:
+  - degree: "MS in Industrial Engineering"
+    school: "Georgia Tech"
+
+  - degree: "BS in Industrial Engineering"
+    school: "University of Pune (VIT)"
+
+skills:
+  - category: "Core"
+    items: ["Strategy & Ops", "Operations", "Product Strategy"]
+  - category: "Tech"
+    items: ["Python", "SQL", "Data Analysis", "Data Visualization", "Machine Learning"]
