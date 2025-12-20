@@ -50,10 +50,21 @@ body {
 .nav-container {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 20px;          /* Reduced slightly from 25px for better mobile fit */
     margin-bottom: 60px;
     font-size: 0.95rem;
     font-weight: 400;
+    flex-wrap: wrap;    /* <--- ADD THIS: Allows items to stack if needed */
+}
+
+/* Optional: Center nav items on very small screens */
+@media (max-width: 450px) {
+    .nav-container {
+        justify-content: center;
+    }
+    .theme-toggle-btn {
+        margin-left: 0; /* Resets the "push to right" on mobile */
+    }
 }
 
 .theme-toggle-btn {
