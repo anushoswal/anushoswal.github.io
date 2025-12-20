@@ -473,3 +473,25 @@ body.light-mode .button { border-color: #ddd; }
     border-color: var(--accent);
     color: var(--accent);
 }
+
+
+
+/* --- CLICKABLE CARD FIXES --- */
+a.card {
+    border: 1px solid transparent; /* Prepare for hover border */
+    transition: transform 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+a.card:hover {
+    background-color: var(--card-hover);
+    transform: translateY(-2px); /* Subtle lift */
+    border-color: var(--border);
+}
+
+a.card h3 {
+    transition: color 0.2s;
+}
+
+a.card:hover h3 {
+    color: var(--accent); /* Ensure title stays crisp on hover */
+}
