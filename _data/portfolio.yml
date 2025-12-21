@@ -1,38 +1,43 @@
+# US MARKETS
+- company: "SpaceX"
+  url: "https://www.spacex.com"
+  stage: "Pre-IPO"
+  thesis: "Reusable rockets revolutionizing orbital access costs."
+  status: "Held"
+  region: "US"
+
 - company: "OpenAI"
   url: "https://openai.com"
   stage: "Series A"
   thesis: "Generative models will commoditize intelligence."
   status: "Active"
+  region: "US"
+
+- company: "Stripe"
+  url: "https://stripe.com"
+  stage: "Pre-IPO"
+  thesis: "Financial infrastructure platform for the internet."
+  status: "Held"
+  region: "US"
 
 - company: "Anduril"
   url: "https://anduril.com"
   stage: "Seed"
   thesis: "Modernizing defense through autonomous systems."
   status: "Active"
+  region: "US"
 
-- company: "Varda"
-  url: "https://varda.com"
+# INDIA MARKETS (Examples)
+- company: "Zetwerk"
+  url: "https://zetwerk.com"
   stage: "Series B"
-  thesis: "Microgravity manufacturing is the next industrial revolution."
+  thesis: "B2B manufacturing marketplace for the world."
   status: "Watchlist"
+  region: "India"
 
-# PUBLIC / DEEP TECH
-- company: "SpaceX"
-  url: "https://www.spacex.com"
-  stage: "Pre-IPO"
-  thesis: "Reusable rockets revolutionizing orbital access costs."
-  status: "Held"
-
-# PRIVATE / AI
-- company: "OpenAI"
-  url: "https://openai.com"
-  stage: "Series A"
-  thesis: "Generative models will commoditize intelligence."
-  status: "Active"
-
-# FINTECH
-- company: "Stripe"
-  url: "https://stripe.com"
-  stage: "Pre-IPO"
-  thesis: "Financial infrastructure platform for the internet."
-  status: "Held"
+- company: "Postman"
+  url: "https://postman.com"
+  stage: "Series C"
+  thesis: "API-first development platform standard."
+  status: "Watchlist"
+  region: "India"

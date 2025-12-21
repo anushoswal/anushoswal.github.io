@@ -8,10 +8,16 @@ title: Investing | Anush Oswal
     <p class="subtitle">Backing founders building the impossible.</p>
 </header>
 
-<section class="grid-section fade-in delay-2">
+<div class="fade-in delay-2" style="margin-bottom: 40px; display: flex; gap: 10px;">
+    <button class="filter-tag active" onclick="filterSelection('US')">US Markets</button>
+    <button class="filter-tag" onclick="filterSelection('India')">India Markets</button>
+    <button class="filter-tag" onclick="filterSelection('all')">Global View</button>
+</div>
+
+<section class="grid-section fade-in delay-3">
     
     {% for bet in site.data.portfolio %}
-    <div class="card">
+    <div class="card investment-card" data-region="{{ bet.region }}">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
             <h3>
                 <a href="{{ bet.url }}" target="_blank" class="card-title-link">
@@ -23,7 +29,10 @@ title: Investing | Anush Oswal
         
         <p>{{ bet.thesis }}</p>
         
-        <strong class="card-tag" style="margin-top: 15px; display: block;">{{ bet.stage }}</strong>
+        <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+            <strong class="card-tag">{{ bet.stage }}</strong>
+            <span style="font-size: 0.7rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px;">{{ bet.region }}</span>
+        </div>
     </div>
     {% endfor %}
 
@@ -34,3 +43,34 @@ title: Investing | Anush Oswal
         <em>Disclaimer: Not financial advice. Opinions are my own.</em>
     </p>
 </section>
+
+<script>
+    function filterSelection(region) {
+        var cards = document.getElementsByClassName("investment-card");
+        var buttons = document.getElementsByClassName("filter-tag");
+
+        // 1. Show/Hide Cards
+        for (var i = 0; i < cards.length; i++) {
+            var cardRegion = cards[i].getAttribute("data-region");
+            if (region === 'all' || cardRegion === region) {
+                cards[i].style.display = "block";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+
+        // 2. Update Active Button State
+        // Convert HTMLCollection to Array to use forEach, or use loop
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove("active");
+            if (buttons[i].innerText.includes(region) || (region === 'all' && buttons[i].innerText.includes('Global'))) {
+                buttons[i].classList.add("active");
+            }
+        }
+    }
+
+    // Initialize with US Default
+    document.addEventListener("DOMContentLoaded", function() {
+        filterSelection('US');
+    });
+</script>
