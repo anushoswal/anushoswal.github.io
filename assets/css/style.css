@@ -191,12 +191,13 @@ strong {
     color: var(--text-sub);
 }
 
+/* Updated card-tag to remove spacing conflicts */
 .card-tag {
     font-size: 0.8rem;
     color: var(--text-sub);
     font-weight: 500;
-    display: block;
-    margin-top: 15px;
+    display: inline-block; /* Changed from block to inline-block */
+    margin-top: 0;         /* REMOVED the 15px margin here */
 }
 
 /* --- FOOTER & BUTTONS --- */

@@ -31,11 +31,13 @@ title: Investing | Anush Oswal
             </div>
             
             <p>{{ bet.thesis }}</p>
-            
-            <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
-                <strong class="card-tag">{{ bet.stage }}</strong>
-                <span style="font-size: 0.7rem; color: var(--text-sub); text-transform: uppercase;">{{ bet.sector }}</span>
-            </div>
+    
+                <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: baseline;">
+                    <strong class="card-tag">{{ bet.stage }}</strong>
+                    <span style="font-size: 0.7rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">
+                        {{ bet.sector }}
+                    </span>
+                </div>
         </div>
         {% endif %}
         {% endfor %}
