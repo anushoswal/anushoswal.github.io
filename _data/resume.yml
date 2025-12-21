@@ -3,10 +3,10 @@ experience:
     company: "Tesla"
     dates: "Present"
     location: "Fremont, CA"
-    summary: "Global Vehicle S&OP"
-    highlights:
-      - "Strategy"
-      - "Ops"
+    summary: "Strategizing & executing global S&OP processes for Tesla"
+    # highlights:
+    #   - "Strategy"
+    #   - "Ops"
 
   - role: "S&OP Analyst"
     company: "Hewlett Packard Enterprise"
