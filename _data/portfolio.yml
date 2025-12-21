@@ -1,43 +1,102 @@
-# US MARKETS
-- company: "SpaceX"
-  url: "https://www.spacex.com"
-  stage: "Pre-IPO"
-  thesis: "Reusable rockets revolutionizing orbital access costs."
-  status: "Held"
+# --- FEATURED BETS (The "Barbell" Heavy Weights) ---
+- company: "Tesla"
+  featured: true
+  url: "https://tesla.com"
+  stage: "Public"
+  sector: "Energy/Robotics"
+  thesis: "Solving autonomy and energy generation at scale."
+  status: "Active"
   region: "US"
 
 - company: "OpenAI"
+  featured: true
   url: "https://openai.com"
   stage: "Series A"
+  sector: "AI"
   thesis: "Generative models will commoditize intelligence."
   status: "Active"
   region: "US"
 
+- company: "Zomato"
+  featured: true
+  url: "https://zomato.com"
+  stage: "Public"
+  sector: "Consumer Tech"
+  thesis: "The operating system for food in India."
+  status: "Held"
+  region: "India"
+
+# --- THE INDEX (The Long Tail) ---
+# US MARKETS
+- company: "SpaceX"
+  featured: false
+  url: "https://spacex.com"
+  stage: "Pre-IPO"
+  sector: "Deep Tech"
+  status: "Held"
+  region: "US"
+
 - company: "Stripe"
+  featured: false
   url: "https://stripe.com"
   stage: "Pre-IPO"
-  thesis: "Financial infrastructure platform for the internet."
+  sector: "Fintech"
   status: "Held"
   region: "US"
 
 - company: "Anduril"
+  featured: false
   url: "https://anduril.com"
-  stage: "Seed"
-  thesis: "Modernizing defense through autonomous systems."
+  stage: "Series E"
+  sector: "Defense"
   status: "Active"
   region: "US"
 
-# INDIA MARKETS (Examples)
-- company: "Zetwerk"
-  url: "https://zetwerk.com"
-  stage: "Series B"
-  thesis: "B2B manufacturing marketplace for the world."
+- company: "NVIDIA"
+  featured: false
+  url: "https://nvidia.com"
+  stage: "Public"
+  sector: "Semiconductors"
+  status: "Held"
+  region: "US"
+
+- company: "Palantir"
+  featured: false
+  url: "https://palantir.com"
+  stage: "Public"
+  sector: "SaaS/AI"
   status: "Watchlist"
+  region: "US"
+
+# INDIA MARKETS
+- company: "Reliance"
+  featured: false
+  url: "https://ril.com"
+  stage: "Public"
+  sector: "Conglomerate"
+  status: "Held"
   region: "India"
 
 - company: "Postman"
+  featured: false
   url: "https://postman.com"
-  stage: "Series C"
-  thesis: "API-first development platform standard."
+  stage: "Series D"
+  sector: "DevTools"
+  status: "Watchlist"
+  region: "India"
+
+- company: "Zetwerk"
+  featured: false
+  url: "https://zetwerk.com"
+  stage: "Series B"
+  sector: "Manufacturing"
+  status: "Active"
+  region: "India"
+
+- company: "Razorpay"
+  featured: false
+  url: "https://razorpay.com"
+  stage: "Series F"
+  sector: "Fintech"
   status: "Watchlist"
   region: "India"

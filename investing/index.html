@@ -8,37 +8,72 @@ title: Investing | Anush Oswal
     <p class="subtitle">Backing founders building the impossible.</p>
 </header>
 
-<div class="fade-in delay-2" style="margin-bottom: 40px; display: flex; gap: 10px;">
+<div class="fade-in delay-2" style="margin-bottom: 50px; display: flex; gap: 10px;">
     <button class="filter-tag active" onclick="filterSelection('US')">US Markets</button>
     <button class="filter-tag" onclick="filterSelection('India')">India Markets</button>
     <button class="filter-tag" onclick="filterSelection('all')">Global View</button>
 </div>
 
-<section class="grid-section fade-in delay-3">
+<section class="fade-in delay-2">
+    <h4 style="margin-bottom: 20px; color: var(--text-sub); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">High Conviction</h4>
     
-    {% for bet in site.data.portfolio %}
-    <div class="card investment-card" data-region="{{ bet.region }}">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-            <h3>
-                <a href="{{ bet.url }}" target="_blank" class="card-title-link">
-                    {{ bet.company }}
-                </a>
-            </h3>
-            <span style="font-size: 0.8rem; color: var(--accent); opacity: 0.6;">{{ bet.status }}</span>
+    <div class="grid-section" style="margin-bottom: 60px; padding-top: 0; border-top: none;">
+        {% for bet in site.data.portfolio %}
+        {% if bet.featured == true %}
+        <div class="card investment-item" data-region="{{ bet.region }}">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <h3>
+                    <a href="{{ bet.url }}" target="_blank" class="card-title-link">
+                        {{ bet.company }}
+                    </a>
+                </h3>
+                <span style="font-size: 0.8rem; color: var(--accent); opacity: 0.6;">{{ bet.status }}</span>
+            </div>
+            
+            <p>{{ bet.thesis }}</p>
+            
+            <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                <strong class="card-tag">{{ bet.stage }}</strong>
+                <span style="font-size: 0.7rem; color: var(--text-sub); text-transform: uppercase;">{{ bet.sector }}</span>
+            </div>
         </div>
-        
-        <p>{{ bet.thesis }}</p>
-        
-        <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
-            <strong class="card-tag">{{ bet.stage }}</strong>
-            <span style="font-size: 0.7rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px;">{{ bet.region }}</span>
-        </div>
+        {% endif %}
+        {% endfor %}
     </div>
-    {% endfor %}
-
 </section>
 
-<section class="fade-in delay-3" style="margin-top: 60px; text-align: center;">
+<section class="fade-in delay-3">
+    <h4 style="margin-bottom: 20px; color: var(--text-sub); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">The Index</h4>
+
+    <div class="table-container">
+        <table class="investment-table">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Company</th>
+                    <th style="width: 20%;">Stage</th>
+                    <th style="width: 30%;">Sector</th>
+                    <th style="width: 20%; text-align: right;">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bet in site.data.portfolio %}
+                {% if bet.featured != true %}
+                <tr class="investment-item" data-region="{{ bet.region }}">
+                    <td>
+                        <a href="{{ bet.url }}" target="_blank" class="table-link">{{ bet.company }}</a>
+                    </td>
+                    <td style="color: var(--text-sub);">{{ bet.stage }}</td>
+                    <td style="color: var(--text-sub);">{{ bet.sector }}</td>
+                    <td style="text-align: right; color: var(--nav-text);">{{ bet.status }}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="fade-in delay-3" style="margin-top: 80px; text-align: center;">
     <p style="color: var(--text-sub); font-size: 0.9rem;">
         <em>Disclaimer: Not financial advice. Opinions are my own.</em>
     </p>
@@ -46,21 +81,28 @@ title: Investing | Anush Oswal
 
 <script>
     function filterSelection(region) {
-        var cards = document.getElementsByClassName("investment-card");
+        // Select BOTH cards and table rows
+        var items = document.getElementsByClassName("investment-item");
         var buttons = document.getElementsByClassName("filter-tag");
 
-        // 1. Show/Hide Cards
-        for (var i = 0; i < cards.length; i++) {
-            var cardRegion = cards[i].getAttribute("data-region");
-            if (region === 'all' || cardRegion === region) {
-                cards[i].style.display = "block";
+        // 1. Show/Hide Items
+        for (var i = 0; i < items.length; i++) {
+            var itemRegion = items[i].getAttribute("data-region");
+            
+            // Logic: If 'all' OR matches region -> Show. Else -> Hide.
+            if (region === 'all' || itemRegion === region) {
+                // We use 'table-row' for TRs and 'block' for DIVs, but 'display: unset' or empty string works well to restore default
+                if(items[i].tagName === 'TR') {
+                    items[i].style.display = "table-row";
+                } else {
+                    items[i].style.display = "block";
+                }
             } else {
-                cards[i].style.display = "none";
+                items[i].style.display = "none";
             }
         }
 
         // 2. Update Active Button State
-        // Convert HTMLCollection to Array to use forEach, or use loop
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].classList.remove("active");
             if (buttons[i].innerText.includes(region) || (region === 'all' && buttons[i].innerText.includes('Global'))) {
