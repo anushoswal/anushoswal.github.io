@@ -648,12 +648,78 @@ a.card:hover h3 {
 }
 
 @media (max-width: 500px) {
-    .newsletter-box form {
-        flex-direction: column;
-    }
-
     .newsletter-box button {
         width: 100%;
         text-align: center;
     }
+}
+
+/* --- ARTICLE CONTENT STYLES (Medium-Like) --- */
+.article-content {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    font-weight: 400;
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    /* Ensure clean sans-serif */
+}
+
+.article-content h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 2.5em;
+    margin-bottom: 0.8em;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+}
+
+.article-content h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+    color: var(--accent);
+}
+
+.article-content p {
+    margin-bottom: 1.5em;
+}
+
+.article-content ul,
+.article-content ol {
+    margin-bottom: 1.5em;
+    padding-left: 1.2em;
+    /* Tighter padding */
+}
+
+.article-content li {
+    margin-bottom: 0.8em;
+    /* Spacing between bullets */
+    padding-left: 0.5em;
+}
+
+/* Custom bullet color */
+.article-content ul li::marker {
+    color: var(--accent);
+}
+
+.article-content strong {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.article-content blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 2em 0;
+    padding-left: 20px;
+    font-style: italic;
+    color: var(--text-sub);
+    font-size: 1.25rem;
+}
+
+.article-content hr {
+    border: 0;
+    height: 1px;
+    background: var(--border);
+    margin: 3em 0;
 }

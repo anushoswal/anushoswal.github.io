@@ -8,17 +8,17 @@ summary: "Firstsource is executing a textbook pivot from BPO to Tech Platform. T
 
 The Business Process Outsourcing (BPO) industry is facing an existential crisis due to AI. Firstsource Solutions (FSL) has chosen to cannibalize itself before the market does.
 
-### 1. The "UnBPO" Strategy
+## The "UnBPO" Strategy
 Management has coined the term "UnBPO" to describe their shift to an AI-first architecture.
 - **The Thesis**: Replace headcount with "relAI"—their proprietary suite of AI platforms.
 - **Results**: Q2 FY26 revenue grew **20.1% YoY**, proving that tech-led services grow faster than labor-led ones.
 
-### 2. Earnings & Analyst Outlook
+## Earnings & Analyst Outlook
 The street is bullish, but cautious.
 - **Estimates**: Analysts forecast **19.1% annual EPS growth** over the next 3 years.
 - **The Kicker**: Margins. As they shift from "FTEs" (Full Time Employees) to "outcomes," operating margins are projected to stabilize at **11.25-12%**. This doesn't look like a tech company yet, but the trajectory is rerating.
 
-### 3. Investment Rationale
+## Investment Rationale
 We believe the market is pricing FSL as a legacy call center operator. In reality, they are becoming a domain-specific vertical AI company for Healthcare and Banking.
 - **Strategic Acquisitions**: The purchase of AccunAI (GenAI dev) signals intent.
 - **The Play**: We are buying the transition. If they successfully reach their **$1 Billion run-rate by Q4 FY26**, the multiple expansion will be significant.
