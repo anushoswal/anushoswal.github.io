@@ -50,11 +50,13 @@ body {
 .nav-container {
     display: flex;
     align-items: center;
-    gap: 20px;          /* Reduced slightly from 25px for better mobile fit */
+    gap: 20px;
+    /* Reduced slightly from 25px for better mobile fit */
     margin-bottom: 60px;
     font-size: 0.95rem;
     font-weight: 400;
-    flex-wrap: wrap;    /* <--- ADD THIS: Allows items to stack if needed */
+    flex-wrap: wrap;
+    /* <--- ADD THIS: Allows items to stack if needed */
 }
 
 /* Optional: Center nav items on very small screens */
@@ -62,8 +64,10 @@ body {
     .nav-container {
         justify-content: center;
     }
+
     .theme-toggle-btn {
-        margin-left: 0; /* Resets the "push to right" on mobile */
+        margin-left: 0;
+        /* Resets the "push to right" on mobile */
     }
 }
 
@@ -96,10 +100,12 @@ body {
 }
 
 body.light-mode .nav-logo-img {
-    filter: invert(1); 
+    filter: invert(1);
 }
 
-.nav-logo-img:hover { opacity: 1; }
+.nav-logo-img:hover {
+    opacity: 1;
+}
 
 .nav-link {
     color: var(--nav-text);
@@ -108,7 +114,8 @@ body.light-mode .nav-logo-img {
     position: relative;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     color: var(--nav-active);
 }
 
@@ -130,7 +137,9 @@ body.light-mode .nav-logo-img {
 }
 
 /* --- LAYOUT & TYPOGRAPHY --- */
-header { margin-bottom: 60px; }
+header {
+    margin-bottom: 60px;
+}
 
 h1 {
     font-size: 3rem;
@@ -196,15 +205,18 @@ strong {
     font-size: 0.8rem;
     color: var(--text-sub);
     font-weight: 500;
-    display: inline-block; /* Changed from block to inline-block */
-    margin-top: 0;         /* REMOVED the 15px margin here */
+    display: inline-block;
+    /* Changed from block to inline-block */
+    margin-top: 0;
+    /* REMOVED the 15px margin here */
 }
 
 /* --- FOOTER & BUTTONS --- */
 footer {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the button */
+    align-items: center;
+    /* Centers the button */
     gap: 2rem;
     margin-bottom: 60px;
 }
@@ -220,7 +232,9 @@ footer {
     transition: all 0.3s ease;
 }
 
-body.light-mode .button { border-color: #ddd; }
+body.light-mode .button {
+    border-color: #ddd;
+}
 
 .button:hover {
     background-color: var(--accent);
@@ -230,8 +244,10 @@ body.light-mode .button { border-color: #ddd; }
 /* SOCIAL ICONS CENTERING */
 .social-links-row {
     display: flex;
-    justify-content: center; /* Perfectly centers the icons row */
-    gap: 30px; /* Space between icons */
+    justify-content: center;
+    /* Perfectly centers the icons row */
+    gap: 30px;
+    /* Space between icons */
 }
 
 .social-links-row a {
@@ -270,7 +286,8 @@ body.light-mode .button { border-color: #ddd; }
     font-size: 1.5rem;
     transition: color 0.2s, transform 0.2s;
     text-decoration: none;
-    display: flex; /* Helps vertically align icons */
+    display: flex;
+    /* Helps vertically align icons */
 }
 
 .social-links-row a:hover {
@@ -354,14 +371,17 @@ body.light-mode .button { border-color: #ddd; }
 /* --- CARD TITLE LINKS --- */
 .card-title-link {
     text-decoration: none;
-    color: var(--accent); /* Inherits the header white/black */
+    color: var(--accent);
+    /* Inherits the header white/black */
     transition: opacity 0.2s;
-    border-bottom: 1px solid transparent; /* invisible border for hover effect */
+    border-bottom: 1px solid transparent;
+    /* invisible border for hover effect */
 }
 
 .card-title-link:hover {
     opacity: 0.8;
-    border-bottom: 1px solid var(--accent); /* Minimal underline on hover */
+    border-bottom: 1px solid var(--accent);
+    /* Minimal underline on hover */
 }
 
 /* Fix icon alignment */
@@ -370,7 +390,8 @@ body.light-mode .button { border-color: #ddd; }
 }
 
 .card-title-link:hover i {
-    transform: translate(2px, -2px); /* Tiny move animation */
+    transform: translate(2px, -2px);
+    /* Tiny move animation */
 }
 
 
@@ -398,12 +419,14 @@ body.light-mode .button { border-color: #ddd; }
     margin-bottom: 40px;
     position: relative;
     padding-left: 20px;
-    border-left: 2px solid var(--border); /* The Timeline Line */
+    border-left: 2px solid var(--border);
+    /* The Timeline Line */
     transition: border-color 0.3s;
 }
 
 .resume-item:hover {
-    border-left-color: var(--accent); /* Light up on hover */
+    border-left-color: var(--accent);
+    /* Light up on hover */
 }
 
 .resume-header {
@@ -490,13 +513,15 @@ body.light-mode .button { border-color: #ddd; }
 
 /* --- CLICKABLE CARD FIXES --- */
 a.card {
-    border: 1px solid transparent; /* Prepare for hover border */
+    border: 1px solid transparent;
+    /* Prepare for hover border */
     transition: transform 0.2s, border-color 0.2s, background-color 0.2s;
 }
 
 a.card:hover {
     background-color: var(--card-hover);
-    transform: translateY(-2px); /* Subtle lift */
+    transform: translateY(-2px);
+    /* Subtle lift */
     border-color: var(--border);
 }
 
@@ -505,7 +530,8 @@ a.card h3 {
 }
 
 a.card:hover h3 {
-    color: var(--accent); /* Ensure title stays crisp on hover */
+    color: var(--accent);
+    /* Ensure title stays crisp on hover */
 }
 
 /* --- FILTER TAGS --- */
@@ -514,7 +540,8 @@ a.card:hover h3 {
     border: 1px solid var(--border);
     color: var(--text-sub);
     padding: 6px 16px;
-    border-radius: 20px; /* Capsule shape */
+    border-radius: 20px;
+    /* Capsule shape */
     font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -528,7 +555,8 @@ a.card:hover h3 {
 
 .filter-tag.active {
     background-color: var(--accent);
-    color: var(--bg-color); /* Invert colors for active state */
+    color: var(--bg-color);
+    /* Invert colors for active state */
     border-color: var(--accent);
     font-weight: 500;
 }
@@ -537,7 +565,8 @@ a.card:hover h3 {
 /* --- INVESTMENT TABLE STYLES --- */
 .table-container {
     width: 100%;
-    overflow-x: auto; /* Handles mobile scroll */
+    overflow-x: auto;
+    /* Handles mobile scroll */
 }
 
 .investment-table {
@@ -577,27 +606,54 @@ a.card:hover h3 {
     text-decoration: underline;
 }
 
-/* --- FILTER TAGS (Already added, but ensure this exists) --- */
-.filter-tag {
-    background: transparent;
+/* --- HERO CARD STYLES --- */
+.hero-card {
+    grid-column: 1 / -1;
+    background-color: var(--card-hover);
+    padding: 35px !important;
+    /* Override default padding */
+    border-radius: 12px;
     border: 1px solid var(--border);
-    color: var(--text-sub);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: 'Inter', sans-serif;
+    margin-bottom: 20px;
 }
 
-.filter-tag:hover {
+.hero-card:hover {
+    background-color: var(--card-hover);
+    /* Keep same bg or darken slightly */
     border-color: var(--accent);
+}
+
+.hero-card .thought-title {
     color: var(--accent);
 }
 
-.filter-tag.active {
-    background-color: var(--accent);
-    color: var(--bg-color);
-    border-color: var(--accent);
-    font-weight: 500;
+@media (max-width: 600px) {
+    .hero-card {
+        padding: 25px !important;
+    }
+
+    .hero-card .thought-title {
+        font-size: 1.6rem !important;
+    }
+}
+
+/* --- NEWSLETTER BOX --- */
+.newsletter-box {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 60px;
+    margin-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 500px) {
+    .newsletter-box form {
+        flex-direction: column;
+    }
+
+    .newsletter-box button {
+        width: 100%;
+        text-align: center;
+    }
 }

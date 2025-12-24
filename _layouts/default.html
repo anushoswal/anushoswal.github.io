@@ -1,45 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>{{ page.title }}</title>
-    
-    <meta name="description" content="{{ page.summary | default: 'Technologist & Investor. Currently scaling systems at Tesla. Backing founders in Deep Tech & AI.' }}">
-    <link rel="canonical" href="{{ page.url | absolute_url }}">
+{% include head.html %}
 
-    <meta property="og:site_name" content="Anush Oswal">
-    <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:description" content="{{ page.summary | default: 'Technologist & Investor. Currently scaling systems at Tesla. Backing founders in Deep Tech & AI.' }}">
-    <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="{{ page.image | default: '/assets/images/logo.svg' | absolute_url }}">
-    
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@AnushOswal">
-    <meta name="twitter:title" content="{{ page.title }}">
-    <meta name="twitter:description" content="{{ page.summary | default: 'Technologist & Investor. Currently scaling systems at Tesla. Backing founders in Deep Tech & AI.' }}">
-    <meta name="twitter:image" content="{{ page.image | default: '/assets/images/logo.svg' | absolute_url }}">
-
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg" sizes="any">
-    <link rel="apple-touch-icon" href="/assets/images/logo.svg">
-</head>
 <body>
 
     <div class="container">
         {% include nav.html %}
 
         {{ content }}
-        
+
     </div>
 
     <script src="/assets/js/script.js"></script>
 
 </body>
+
 </html>

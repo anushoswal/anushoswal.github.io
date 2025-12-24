@@ -1,0 +1,16 @@
+<a href="{{ include.post.url }}" class="thought-card hero-card" data-tag="{{ include.post.tag }}">
+    <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+        <span class="thought-date" style="font-size: 1rem;">{{ include.post.date | date: "%b %d, %Y" }}</span>
+        <span class="thought-tag">{{ include.post.tag }}</span>
+    </div>
+
+    <h3 class="thought-title" style="font-size: 2.2rem; margin-bottom: 20px;">
+        {{ include.post.title }}
+        <i class="fas fa-arrow-right"
+            style="font-size: 1.2rem; opacity: 0; transform: translateX(-5px); transition: all 0.3s;"></i>
+    </h3>
+
+    <p class="thought-summary" style="font-size: 1.15rem; line-height: 1.7; -webkit-line-clamp: 4; line-clamp: 4;">
+        {{ include.post.summary }}
+    </p>
+</a>

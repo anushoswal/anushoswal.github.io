@@ -8,74 +8,59 @@ title: Thoughts | Anush Oswal
     <p class="subtitle">Market Thesis & Operational Observations.</p>
 </header>
 
-<div class="fade-in delay-1" style="margin-bottom: 40px; display: flex; gap: 15px; align-items: center;">
-    <select id="yearFilter" class="minimal-select">
-        <option value="2025">2025</option>
-        <option value="2024">2024</option>
-    </select>
-
-    <select id="monthFilter" class="minimal-select">
-        <option value="01">January</option>
-        <option value="02">February</option>
-        <option value="03">March</option>
-        <option value="04">April</option>
-        <option value="05">May</option>
-        <option value="06">June</option>
-        <option value="07">July</option>
-        <option value="08">August</option>
-        <option value="09">September</option>
-        <option value="10">October</option>
-        <option value="11">November</option>
-        <option value="12">December</option>
-    </select>
+<div class="fade-in delay-1"
+    style="margin-bottom: 40px; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding-bottom: 5px;">
+    <button class="filter-tag active" data-filter="all">All</button>
+    {% assign all_tags = site.posts | map: 'tag' | uniq | sort %}
+    {% for tag in all_tags %}
+    {% if tag %}
+    <button class="filter-tag" data-filter="{{ tag }}">{{ tag }}</button>
+    {% endif %}
+    {% endfor %}
 </div>
 
 <section class="grid-section fade-in delay-2" style="grid-template-columns: 1fr; border-top: none;">
-    
+
     {% for post in site.posts %}
-    <a href="{{ post.url }}" class="thought-card" 
-       data-year="{{ post.date | date: '%Y' }}" 
-       data-month="{{ post.date | date: '%m' }}">
-        
+    {% if forloop.first %}
+    {% include hero-post.html post=post %}
+    {% else %}
+    <a href="{{ post.url }}" class="thought-card" data-tag="{{ post.tag }}">
+
         <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
             <span class="thought-date">{{ post.date | date: "%b %d" }}</span>
             <span class="thought-tag">{{ post.tag }}</span>
         </div>
-        
-        <h3 class="thought-title">{{ post.title }} <i class="fas fa-arrow-right" style="font-size: 0.8rem; opacity: 0; transform: translateX(-5px); transition: all 0.3s;"></i></h3>
-        
+
+        <h3 class="thought-title">{{ post.title }} <i class="fas fa-arrow-right"
+                style="font-size: 0.8rem; opacity: 0; transform: translateX(-5px); transition: all 0.3s;"></i></h3>
+
         <p class="thought-summary">{{ post.summary }}</p>
     </a>
+    {% endif %}
     {% endfor %}
 
     <div id="no-thoughts" style="display: none; color: var(--text-sub); font-style: italic;">
-        No thoughts detected for this time period.
+        No thoughts detected for this topic.
     </div>
 
 </section>
 
+{% include newsletter.html %}
+
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const yearSelect = document.getElementById('yearFilter');
-        const monthSelect = document.getElementById('monthFilter');
-        const cards = document.querySelectorAll('.thought-card'); // Updated selector
+        const filterButtons = document.querySelectorAll('.filter-tag');
+        const cards = document.querySelectorAll('.thought-card');
         const noResultsMsg = document.getElementById('no-thoughts');
 
-        const today = new Date();
-        yearSelect.value = today.getFullYear(); 
-        const currentMonth = String(today.getMonth() + 1).padStart(2, '0'); 
-        monthSelect.value = currentMonth;
-
-        function filterThoughts() {
-            const selectedYear = yearSelect.value;
-            const selectedMonth = monthSelect.value;
+        function filterThoughts(category) {
             let visibleCount = 0;
 
             cards.forEach(card => {
-                const cardYear = card.getAttribute('data-year');
-                const cardMonth = card.getAttribute('data-month');
+                const cardTag = card.getAttribute('data-tag');
 
-                if (cardYear === selectedYear && cardMonth === selectedMonth) {
+                if (category === 'all' || cardTag === category) {
                     card.style.display = 'block';
                     visibleCount++;
                 } else {
@@ -86,8 +71,16 @@ title: Thoughts | Anush Oswal
             noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
         }
 
-        yearSelect.addEventListener('change', filterThoughts);
-        monthSelect.addEventListener('change', filterThoughts);
-        filterThoughts();
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                filterButtons.forEach(b => b.classList.remove('active'));
+                // Add to clicked
+                btn.classList.add('active');
+
+                // Filter
+                filterThoughts(btn.getAttribute('data-filter'));
+            });
+        });
     });
 </script>

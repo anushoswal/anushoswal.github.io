@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | Signals</title>
-    
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg" sizes="any">
-</head>
+
+{% include head.html %}
+
 <body>
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 9999; background: transparent;">
+        <div id="scroll-progress" style="height: 100%; width: 0%; background: var(--accent); transition: width 0.1s;">
+        </div>
+    </div>
 
     <div class="container">
         {% include nav.html %}
@@ -19,8 +15,13 @@
         <article class="fade-in">
             <header style="margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 20px;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="color: var(--text-sub); font-size: 0.9rem;">{{ page.date | date: "%B %d, %Y" }}</span>
-                    <span style="color: var(--accent); font-size: 0.8rem; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px;">{{ page.tag }}</span>
+                    <span style="color: var(--text-sub); font-size: 0.9rem;">
+                        {{ page.date | date: "%B %d, %Y" }} • {{ content | number_of_words | divided_by: 180 | plus: 1
+                        }} min read
+                    </span>
+                    <span
+                        style="color: var(--accent); font-size: 0.8rem; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px;">{{
+                        page.tag }}</span>
                 </div>
                 <h1 style="margin-top: 15px; font-size: 2.2rem;">{{ page.title }}</h1>
                 <p class="subtitle" style="margin-bottom: 0;">{{ page.summary }}</p>
@@ -30,13 +31,42 @@
                 {{ content }}
             </div>
 
-            <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border);">
+            <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border);">
+                <h3 style="color: var(--text-sub); font-size: 1rem; margin-bottom: 20px;">Related Thoughts</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    {% assign maxRelated = 2 %}
+                    {% assign count = 0 %}
+                    {% for post in site.posts %}
+                    {% if post.url != page.url and post.tag == page.tag and count < maxRelated %} <a
+                        href="{{ post.url }}" class="thought-card"
+                        style="padding: 20px; border: 1px solid var(--border); border-radius: 8px;">
+                        <span class="thought-date">{{ post.date | date: "%b %d" }}</span>
+                        <h4 class="thought-title" style="font-size: 1.1rem; margin-top: 5px; margin-bottom: 0;">{{
+                            post.title }}</h4>
+                        </a>
+                        {% assign count = count | plus: 1 %}
+                        {% endif %}
+                        {% endfor %}
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
                 <a href="/thoughts/" class="nav-link" style="font-size: 0.9rem;">&larr; Back to Thoughts</a>
             </div>
+
+            <script>
+                window.addEventListener('scroll', () => {
+                    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrolled = (scrollTop / scrollHeight) * 100;
+                    document.getElementById('scroll-progress').style.width = scrolled + "%";
+                });
+            </script>
         </article>
     </div>
 
     <script src="/assets/js/script.js"></script>
 
 </body>
+
 </html>
