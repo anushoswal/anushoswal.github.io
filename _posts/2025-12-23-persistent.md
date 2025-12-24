@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Persistent Systems: The Boutique of Scale"
-date: 2025-12-26
+date: 2025-12-23
 tag: MARKET THESIS
 summary: "In a sea of generic IT services, Persistent has carved a niche as the 'AI Ecosystem Orchestrator.' The $2B revenue roadmap is just the beginning."
 ---

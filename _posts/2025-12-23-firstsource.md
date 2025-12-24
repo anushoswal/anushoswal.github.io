@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Firstsource: The 'UnBPO' Pivot"
-date: 2025-12-27
+date: 2025-12-23
 tag: TURNAROUND
 summary: "Firstsource is executing a textbook pivot from BPO to Tech Platform. The market is slowly waking up to the margin expansion story."
 ---

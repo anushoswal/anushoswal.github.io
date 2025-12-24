@@ -21,10 +21,15 @@ title: Thoughts | Anush Oswal
 
 <section class="grid-section fade-in delay-2" style="grid-template-columns: 1fr; border-top: none;">
 
+    {% assign featured_post = site.posts | where: "featured", true | first %}
+    {% unless featured_post %}
+    {% assign featured_post = site.posts | first %}
+    {% endunless %}
+
+    {% include hero-post.html post=featured_post %}
+
     {% for post in site.posts %}
-    {% if forloop.first %}
-    {% include hero-post.html post=post %}
-    {% else %}
+    {% if post.url != featured_post.url %}
     <a href="{{ post.url }}" class="thought-card" data-tag="{{ post.tag }}">
 
         <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">

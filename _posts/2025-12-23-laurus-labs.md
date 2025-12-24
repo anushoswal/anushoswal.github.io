@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Laurus Labs: The CDMO Pivot"
-date: 2025-12-29
+date: 2025-12-23
 tag: MARKET THESIS
 summary: "Moving from Generics to Synthesis. Laurus Labs is investing heavily to become the default partner for global pharma's supply chain diversification."
 ---
