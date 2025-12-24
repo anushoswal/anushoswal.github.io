@@ -100,3 +100,36 @@
   sector: "Fintech"
   status: "Watchlist"
   region: "India"
+
+- company: "Persistent"
+  featured: false
+  url: "https://www.persistent.com"
+  stage: "Public"
+  sector: "IT Services"
+  status: "Active"
+  region: "India"
+
+- company: "Firstsource"
+  featured: false
+  url: "https://www.firstsource.com"
+  stage: "Public"
+  sector: "BPM"
+  status: "Active"
+  region: "India"
+
+- company: "Laurus Labs"
+  featured: false
+  url: "https://www.lauruslabs.com"
+  stage: "Public"
+  sector: "Pharma/CDMO"
+  status: "Active"
+  region: "India"
+
+# GLOBAL / EUROPE
+- company: "ABB"
+  featured: false
+  url: "https://global.abb"
+  stage: "Public"
+  sector: "Robotics"
+  status: "Active"
+  region: "US"
